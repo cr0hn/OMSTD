@@ -2,7 +2,7 @@
 OMSTD
 =====
 
-.. figure:: doc/images/logo.png
+.. figure:: doc/images/logo_200x200.png
     :align: left
     :figwidth: 25 %
     :scale: 25 %
