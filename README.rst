@@ -21,18 +21,18 @@ Although it can be used to create any kind of tools and in any language, is prim
 
 It would be advisable for the reader to read carefully *Getting started* section, from the documentation, it will help you to understand this guide.
 
-Languajes
+Languages
 ---------
 
 Currently OMSTD is written in **Spanish** only.
 
 **Help to translate it.**
 
-Colaborate
+Collaborate
 ----------
 
-Collaboration are wellcome! You can collaborate:
+Collaboration are welcome! You can collaborate:
 
 + Mailing me :cr0hn<<--AT-->>.cr0hn.com.
-+ Ussing github issues.
++ Using github issues.
 + Forking project and send me patches.
