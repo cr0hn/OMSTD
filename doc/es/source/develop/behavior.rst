@@ -74,11 +74,11 @@ Como se puede ver la imagen anterior, tenemos las siguientes carpetas clave:
 + :file:`framework/`
 
   + :file:`framework/tasks/`: Contiene nuestro código. Es el que contendrá los ficheros con los fuentes de nuestras tareas que queramos ejecutar.
-  + :file:`framework/celery/`: Contiene el único fichero `celery.py <../../../../../examples/develop/bh/001/framework/celery/celery.py>`_ con la información sobre cómo ha de ejecutarse Celery.
+  + :file:`framework/celery/`: Contiene el único fichero `celery.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/bh/001/framework/celery/celery.py>`_ con la información sobre cómo ha de ejecutarse Celery.
 
 **Archivos importantes**:
 
-    `framework/tasks/main_task.py <../../../../../examples/develop/bh/001/framework/tasks/main_task.py>`_
+    `framework/tasks/main_task.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/bh/001/framework/tasks/main_task.py>`_
 
     Este fichero contiene un ejemplo de código que se ejecutará como parte de una tarea. Dicha tarea se quedará a la espera que se le mande información para procesar.
 
@@ -89,7 +89,7 @@ Como se puede ver la imagen anterior, tenemos las siguientes carpetas clave:
         :lines: 22-
         :emphasize-lines: 3
 
-    `framework/celery/celery.py <../../../../../examples/develop/bh/001/framework/celery/celery.py>`_
+    `framework/celery/celery.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/bh/001/framework/celery/celery.py>`_
 
     Contiene la información necesaria para cargar y configurar Celery. A continuación se muestran la lineas más importantes de este fichero:
 
@@ -99,7 +99,7 @@ Como se puede ver la imagen anterior, tenemos las siguientes carpetas clave:
         :emphasize-lines: 6,7,14
 
 
-    `start.py <../../../../../examples/develop/bh/001/start.py>`_
+    `start.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/bh/001/start.py>`_
 
     Contiene la llamada a la tarea tipo Celery.
 
@@ -125,14 +125,14 @@ Funcionamiento avanzado
 
     Por defecto, Celery solo importa las tareas que tienen como nombre de fichero :file:`tasks.py`. Usando un un pequeño truco, podemos localizar todos los ficheros con tareas de Celery, independientemente del nombre de fichero:
 
-    `Ejemplo BH-001.P01 <../../../../../examples/develop/bh/001/utils.py>`_
+    `Ejemplo BH-001.P01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/bh/001/utils.py>`_
 
     .. literalinclude:: ../../../../examples/develop/bh/001/utils.py
         :linenos:
         :lines: 25-
         :emphasize-lines: 2,4
 
-    `Ejemplo BH-001.S02 <../../../../../examples/develop/bh/001/celeryconfig.py>`_
+    `Ejemplo BH-001.S02 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/bh/001/celeryconfig.py>`_
 
     .. literalinclude:: ../../../../examples/develop/bh/001/celeryconfig.py
         :linenos:
@@ -319,7 +319,7 @@ Configuración
 
     Tan solo tenemos que cambiar la configuración de Celery y añadir la tarea que queremos ejecutar y la repetición del mismo:
 
-    `Ejemplo BH-002.S01 <../../../../../examples/develop/bh/002/celeryconfig.py>`_
+    `Ejemplo BH-002.S01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/bh/002/celeryconfig.py>`_
 
     .. literalinclude:: ../../../../examples/develop/bh/002/celeryconfig.py
         :lines: 26-

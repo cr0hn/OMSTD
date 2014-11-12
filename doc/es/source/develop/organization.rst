@@ -60,7 +60,7 @@ Una vez preparada la estructura para nuestra aplicación, ahora queremos "llamar
 * El código se hace cada vez más enrevesado e inmanejable.
 * Cambios de versiones de un mismos programas son incompatibles.
 
-`Ejemplo ST-002.P01 <../../../../../examples/develop/st/002/st-002-p1.py>`_
+`Ejemplo ST-002.P01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/st/002/st-002-p1.py>`_
 
 Este ejemplo de programa que divide dos números. Acepta 2 parámetros por linea de comandos:
 
@@ -73,7 +73,7 @@ Si ocurre una división por 0 devuelve -1:
     :lines: 25-
     :linenos:
 
-`Ejemplo ST-002.P02 <../../../../../examples/develop/st/002/st-002-p2.py>`_
+`Ejemplo ST-002.P02 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/st/002/st-002-p2.py>`_
 
 Ahora queremos añadir otro parámetro, "verbosity", como opción a nuestro programa.
 
@@ -92,7 +92,7 @@ Hacer un objeto global que sea el que contenga los parámetros globales de ejecu
 Cómo
 ****
 
-`Ejemplo ST-002.S01 <../../../../../examples/develop/st/002/st-002-s1.py>`_
+`Ejemplo ST-002.S01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/st/002/st-002-s1.py>`_
 
 .. literalinclude:: ../../../../examples/develop/st/002/st-002-s1.py
     :lines: 26-
@@ -119,7 +119,7 @@ Recuperar la información de salida de una aplicación es muy complicado:
 
 Usando el mismo ejemplo que en el anterior caso:
 
-`Ejemplo ST-003.P01 <../../../../../examples/develop/st/003/st-003-p1.py>`_
+`Ejemplo ST-003.P01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/st/003/st-003-p1.py>`_
 
 .. literalinclude:: ../../../../examples/develop/st/003/st-003-p1.py
     :lines: 25-
@@ -127,7 +127,7 @@ Usando el mismo ejemplo que en el anterior caso:
 
 Cuando queremos añadir un parámetro nuevo en la devolución, vemos que hay que modificar varias lineas de código:
 
-`Ejemplo ST-003.P02 <../../../../../examples/develop/st/003/st-003-p2.py>`_
+`Ejemplo ST-003.P02 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/st/003/st-003-p2.py>`_
 
 .. literalinclude:: ../../../../examples/develop/st/003/st-003-p2.py
     :lines: 26-
@@ -144,7 +144,7 @@ Además, estos objetos, nos permiten abstraer el almacenamiento de información,
 Cómo
 ****
 
-`Ejemplo ST-003.S01 <../../../../../examples/develop/st/003/st-003-s1.py>`_
+`Ejemplo ST-003.S01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/st/003/st-003-s1.py>`_
 
 .. literalinclude:: ../../../../examples/develop/st/003/st-003-s1.py
     :lines: 26-
@@ -187,9 +187,9 @@ Incluir el concepto de api.py y enseñar como el command line y el import funcio
 
 .. image:: ../../../images/st-004.03.png
 
-`Ejemplo ST-004.P01 <../../../../../examples/develop/st/004/>`_
+`Ejemplo ST-004.P01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/st/004/>`_
 
-Tras incluir el fichero "api.py", la UI de linea de comandos (`st-004-s1.py <../../../../../examples/develop/st/004/st-004-s1.py>`_) nos quedará como sigue:
+Tras incluir el fichero "api.py", la UI de linea de comandos (`st-004-s1.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/st/004/st-004-s1.py>`_) nos quedará como sigue:
 
 .. literalinclude:: ../../../../examples/develop/st/004/st-004-s1.py
     :lines: 26-
@@ -197,7 +197,7 @@ Tras incluir el fichero "api.py", la UI de linea de comandos (`st-004-s1.py <../
     :emphasize-lines: 1,16
 
 
-Si echamos un vistazo a `api.py <../../../../examples/develop/004/api.py>`_, podemos observar que este fichera centraliza las llamadas al resto de librerías:
+Si echamos un vistazo a `api.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/004/api.py>`_, podemos observar que este fichera centraliza las llamadas al resto de librerías:
 
 .. literalinclude:: ../../../../examples/develop/st/004/api.py
     :lines: 28-

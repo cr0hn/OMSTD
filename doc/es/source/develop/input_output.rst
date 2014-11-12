@@ -22,7 +22,7 @@ Mi aplicación muestra información por pantalla pero he de cambiar mucho códig
 * Volcar esa misma información a un fichero.
 * Enviar esa información a más de una ubicación.
 
-`Ejemplo IO-001.P01 <../../../../../examples/develop/io/001/io-001-p1.py>`_
+`Ejemplo IO-001.P01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/io/001/io-001-p1.py>`_
 
 Este es el código normal, con un :samp:`print(...)`:
 
@@ -30,7 +30,7 @@ Este es el código normal, con un :samp:`print(...)`:
     :lines: 25-
     :linenos:
 
-`Ejemplo IO-001.P02 <../../../../../examples/develop/io/001/io-001-p2.py>`_
+`Ejemplo IO-001.P02 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/io/001/io-001-p2.py>`_
 
 Vemos realmente el problema cuando queremos añadir más localizaciones donde enviar el texto:
 
@@ -40,7 +40,7 @@ Vemos realmente el problema cuando queremos añadir más localizaciones donde en
     :emphasize-lines: 6-7
 
 
-`Ejemplo IO-001.P03 <../../../../../examples/develop/io/001/io-001-p3.py>`_
+`Ejemplo IO-001.P03 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/io/001/io-001-p3.py>`_
 
 Y todavía se complica más si queremos añadir niveles de verbosidad:
 
@@ -65,7 +65,7 @@ Para ello tenemos que declarar una clase estática global, que siga el patrón `
 
     Si se crea otra nueva instancia, internamente no creará un nuevo objeto, sino que "rescatará" de la memoria el primer objeto que se creó y se reutilizará.
 
-`Ejemplo IO-001.S01 <../../../../../examples/develop/io/001/io-001-s1.py>`_
+`Ejemplo IO-001.S01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/io/001/io-001-s1.py>`_
 
 .. literalinclude:: ../../../../examples/develop/io/001/io-001-s1.py
     :lines: 25-

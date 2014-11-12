@@ -33,7 +33,7 @@ Usar `pip <https://pypi.python.org/pypi>`_ + el fichero `requirements.txt <http:
 Cómo
 ****
 
-En este link se puede encontrar el ejemplo: `Ejemplo requirements.txt <../../../../examples/develop/rd/001/requirements.txt>`_
+En este link se puede encontrar el ejemplo: `Ejemplo requirements.txt <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/rd/001/requirements.txt>`_
 
 Para instalar todas las dependencias usando pip:
 

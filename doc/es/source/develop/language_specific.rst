@@ -38,7 +38,7 @@ Desde Python 3.4 existen lo que se llaman "corrutinas" a través de la librería
 Cómo
 ****
 
-`Ejemplo LP-001.P01 <../../../../../examples/develop/lp/001/lp-001-p1.py>`_
+`Ejemplo LP-001.P01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/001/lp-001-p1.py>`_
 
 Este ejemplo muestra como descargar el contenido de una URL, usando la **librería estándar** de Python 3.4:
 
@@ -93,7 +93,7 @@ La solución, para lograr la `ejecución pararela <http://www.haskell.org/haskel
 Cómo
 ****
 
-`Ejemplo LP-002.P01 <../../../../../examples/develop/lp/002/lp-002-p1.py>`_
+`Ejemplo LP-002.P01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/002/lp-002-p1.py>`_
 
 El siguiente código muestra un ejemplo típico de multithreading en Python, en el que solo puede haber **10 threads** en ejecución concurrente (que no paralela) a la vez:
 
@@ -102,7 +102,7 @@ El siguiente código muestra un ejemplo típico de multithreading en Python, en 
     :linenos:
     :emphasize-lines: 3
 
-`Ejemplo LP-002.S01 <../../../../../examples/develop/lp/002/lp-002-s1.py>`_
+`Ejemplo LP-002.S01 <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/002/lp-002-s1.py>`_
 
 El siguiente ejemplo muestra el mismo resultado, pero con multiprocessing:
 
@@ -137,7 +137,7 @@ Tenemos una función que ha de invocarse con 3 parámetros a través de un callb
 
 #. Tenemos una librería, llamada :samp:`external.api`, de la que queremos ejecutar una función :samp:`action_with_callback` y cuyo código es:
 
-    `external/api.py <../../../../examples/develop/lp/003/external/api.py>`_
+    `external/api.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/003/external/api.py>`_
 
     .. literalinclude:: ../../../../examples/develop/lp/003/external/api.py
         :linenos:
@@ -146,7 +146,7 @@ Tenemos una función que ha de invocarse con 3 parámetros a través de un callb
 
 #. En nuestro código queremos ejecutar diferentes acciones, en función lo que el usuario indice en la linea de comandos, pero no podemos por el modo de funcionamiento del API externo: No podemos pasar como parámetro la operación y el primer dato:
 
-    `lp-003-p1.py <../../../../examples/develop/lp/003/lp-003-p1.py>`_
+    `lp-003-p1.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/003/lp-003-p1.py>`_
 
     .. literalinclude:: ../../../../examples/develop/lp/003/lp-003-p1.py
         :linenos:
@@ -176,7 +176,7 @@ Cómo
 
 Para construir un *partial* en Python es muy sencillo, para ello debemos usar la librería :samp:`functools`:
 
-`lp-003-s1.py <../../../../examples/develop/lp/003/lp-003-s1.py>`_
+`lp-003-s1.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/003/lp-003-s1.py>`_
 
 .. literalinclude:: ../../../../examples/develop/lp/003/lp-003-s1.py
     :linenos:
@@ -203,7 +203,7 @@ Esto puede implicar:
 
 Por ejemplo:
 
-`lp-004-p1.py <../../../../examples/develop/lp/004/lp-004-p1.py>`_
+`lp-004-p1.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/004/lp-004-p1.py>`_
 
 .. literalinclude:: ../../../../examples/develop/lp/004/lp-004-p1.py
     :linenos:
@@ -224,7 +224,7 @@ Cómo
 
 En el siguiente código podemos apreciar que el cambio es mínimo. Con este sencillo cambio nos ahorraremos multitud de problemas:
 
-`lp-004-s1.py <../../../../examples/develop/lp/004/lp-004-s1.py>`_
+`lp-004-s1.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/004/lp-004-s1.py>`_
 
 .. literalinclude:: ../../../../examples/develop/lp/004/lp-004-s1.py
     :linenos:
@@ -255,7 +255,7 @@ Esto dejará descriptores de sistema abiertos y huérfanos, ocupando recursos de
 
 El siguiente ejemplo ilustra esta situación:
 
-`lp-005-p1.py <../../../../examples/develop/lp/005/lp-005-p1.py>`_
+`lp-005-p1.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/005/lp-005-p1.py>`_
 
 .. literalinclude:: ../../../../examples/develop/lp/005/lp-005-p1.py
     :linenos:
@@ -296,7 +296,7 @@ Donde:
 
 Aquí podemos ver el ejemplo anterior usando :samp:`with`:
 
-`lp-005-s1.py <../../../../examples/develop/lp/005/lp-005-s1.py>`_
+`lp-005-s1.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/005/lp-005-s1.py>`_
 
 .. literalinclude:: ../../../../examples/develop/lp/005/lp-005-s1.py
     :linenos:
