@@ -46,9 +46,9 @@ Cualquier idea, crítica (constructiva, por favor) o colaboración es muy bienve
 
 + Correo electrónico (cr0hn<<--AT-->>.cr0hn.com).
 + Usando los issues de github.
-+ Hackiendo un fork de proyecto y enviando un parche.
++ Haciendo un fork de proyecto y enviando un parche.
 
-Si estás interesado en ayudar, puedes echar un vistazo a `TODO.rst <../../../../TODO.rst>`_ y ver las ideas pendientes de implementar.
+Si estás interesado en ayudar, puedes echar un vistazo a `TODO.rst <https://github.com/cr0hn/OMSTD/blob/master/TODO.rst>`_ y ver las ideas pendientes de implementar.
 
 Una de las finalidades es portar esta guía a otros idiomas. **SI DOMINAS CUALQUIER OTRO IDIOMA ADEMÁS DEL ESPAÑOL, ANÍMATE A ECHAR UNA MANO**.
 
