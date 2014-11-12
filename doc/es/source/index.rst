@@ -7,9 +7,8 @@ Bienvenido a OMSTD (Open Methodology for Security Tool Developers)
 ==================================================================
 
 
-.. figure:: ../../images/logo.png
+.. figure:: ../../images/logo_200x200.png
     :align: left
-    :figwidth: 25 %
 
 OMSTD (Open Methodology for Security Tool Developers) es una serie de casos de estudio, agrupados y categorizados a modo de guía, con los que lograr desarrollar herramientas bien construidas.
 
