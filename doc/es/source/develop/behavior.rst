@@ -137,7 +137,7 @@ Funcionamiento avanzado
     .. literalinclude:: ../../../../examples/develop/bh/001/celeryconfig.py
         :linenos:
         :lines: 25-
-        :emphasize-lines: 10
+        :emphasize-lines: 8
 
 **Invocar tareas por su nombre:**
 
