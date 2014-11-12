@@ -5,6 +5,7 @@ OMSTD
 .. figure:: doc/images/logo.png
     :align: left
     :figwidth: 25 %
+    :scale: 25 %
 
 *Open Methodology for Security Tool Developers*
 
