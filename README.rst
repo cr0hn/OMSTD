@@ -4,14 +4,12 @@ OMSTD
 
 .. figure:: doc/images/logo_200x200.png
     :align: left
-    :figwidth: 25 %
-    :scale: 25 %
 
 *Open Methodology for Security Tool Developers*
 
 :Code:          https://github.com/cr0hn/omstd
 :Issues:        https://github.com/cr0hn/omstd/issues
-:Documentation [ES]: https://readthedocs.org/projects/omstd/es/
+:Documentation [ES]: http://omstd.readthedocs.org
 
 What's this project?
 --------------------
@@ -30,7 +28,7 @@ Currently OMSTD is written in **Spanish** only.
 **Help to translate it.**
 
 Collaborate
-----------
+-----------
 
 Collaboration are welcome! You can collaborate:
 
