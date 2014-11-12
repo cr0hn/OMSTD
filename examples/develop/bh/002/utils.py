@@ -43,16 +43,20 @@ def find_tasks_in_project(project_root=None):
     results_add = results.add
 
     for root, dirs, files in os.walk(pkg_path):
-        if "template" in root:
+        # Check if folder is a package
+        if "__init__.py" not in files:
             continue
+
         for filename in files:
             if filename.endswith(".py") and \
                     not filename.startswith("__") and \
                     not filename.startswith("celery"):
                 task = os.path.join(root, filename) \
-                    .replace(os.path.dirname(project_root) + '/', '') \
+                    .replace(project_root, '') \
                     .replace(os.path.sep, '.') \
                     .replace('.py', '')
+
+                task = task[1:] if task.startswith(".") else task
 
                 results_add(task)
 
