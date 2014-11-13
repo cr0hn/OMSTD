@@ -21,10 +21,16 @@ Autor
 
 Esta guía ha sido escrita e ideada por `Daniel García (A.K.A. cr0hn) <http://cr0hn.com/me/>`_.
 
-Web oficial
------------
+Web oficial y Twitter
+---------------------
 
-Esta guía, así como su código de ejemplo y presentaciones están publicadas de forma **gratuita** en su repositorio de Github: `https://github.com/cr0hn/omstd <https://github.com/cr0hn/omstd>`_
+Esta guía, así como su código de ejemplo y presentaciones están publicadas de forma **gratuita** en su repositorio de Github: 
+
+  `https://github.com/cr0hn/omstd <https://github.com/cr0hn/omstd>`_
+
+Puedes seguir los avances, novedades y noticias de esta guía en nuestra cuenta de twitter:
+
+  `@OMSTD_project <https://twitter.com/OMSTD_project>`_
 
 Licencias
 ---------
@@ -51,6 +57,19 @@ Cualquier idea, crítica (constructiva, por favor) o colaboración es muy bienve
 Si estás interesado en ayudar, puedes echar un vistazo a `TODO.rst <https://github.com/cr0hn/OMSTD/blob/master/TODO.rst>`_ y ver las ideas pendientes de implementar.
 
 Una de las finalidades es portar esta guía a otros idiomas. **SI DOMINAS CUALQUIER OTRO IDIOMA ADEMÁS DEL ESPAÑOL, ANÍMATE A ECHAR UNA MANO**.
+
+¿A quién va dirigida esta guía?
+-------------------------------
+
+Esta guía está dirigida a auditores de seguridad y *pentesters* que necesitan desarrollar sus propias herramientas (muchas veces *on-the-fly*) y quieren que éstas sean algo más que un simple script.
+
+Un *pentester* puede ser muy bueno en tareas de hacking, pero no tiene porque tener tanto conocimiento en desarrollo, buenas prácticas, patrones de diseño, etc.
+
+**Para poder usar esta guía se recomienda:**
+
++ Tener conocimientos básicos de programación en Python 3 (**Si solo sabes Python 2, también podrás seguir la guía**, no te preocupes).
++ Tener conocimientos básicos de seguridad informática
+
 
 Organización de la guía
 -----------------------
