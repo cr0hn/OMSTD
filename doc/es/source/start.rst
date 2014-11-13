@@ -17,7 +17,7 @@ El objetivo de este proyecto es crear una metodología abierta y colaborativa co
 Estado actual
 -------------
 
-Actualmente esta guía recoje un número bastante limitado de casos. Hay mucho por hacer y muchas ideas por documentar.
+Actualmente esta guía recoge un número bastante limitado de casos. Hay mucho por hacer y muchas ideas por documentar.
 
 Poco a poco, y con la ayuda de todo el que quiera contribuir, espero que el número de casos de estudio y ejemplos crezca.
 
@@ -44,7 +44,7 @@ Una vez estudiado y familiarizado con ellos tan solo tendrás que buscar el caso
 Ejemplos
 ++++++++
 
-Todos los ejemplos se encuentran colgando del directorio **examples**. En él podrás encontrar una serie de carpetas que coinciden con los códigos de los bloques (:ref:`mirad más abajo <categories>` ) y una sub-carpeta con valores numéricos de 3 dígitos, que corresponde con un caso de estudio concreto+, por ejemplo:
+Todos los ejemplos se encuentran colgando del directorio **examples**. En él podrás encontrar una serie de carpetas que coinciden con los códigos de los bloques (:ref:`mirad más abajo <categories>` ) y una sub-carpeta con valores numéricos de 3 dígitos, que corresponde con un caso de estudio concreto, por ejemplo:
 
 .. code-block:: bash
 
