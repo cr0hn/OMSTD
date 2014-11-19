@@ -11,6 +11,7 @@ OMSTD
 :Issues:        https://github.com/cr0hn/omstd/issues
 :Twitter:       https://twitter.com/OMSTD_project
 :Documentation [ES]: http://omstd.readthedocs.org
+:Proposed study cases: https://github.com/cr0hn/OMSTD/issues?q=is%3Aopen+is%3Aissue+label%3A%22new+study+case+proposal%22
 
 What's this project?
 --------------------
