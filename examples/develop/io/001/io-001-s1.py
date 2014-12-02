@@ -30,6 +30,8 @@ class Displayer:
     def __new__(cls, *args, **kwargs):
         if cls.instance is None:
             cls.instance = object.__new__(cls, *args, **kwargs)
+            cls.__initialized = False
+        return cls.instance
 
     def config(self, **kwargs):
         self.out_file = kwargs.get("out_file", None)
@@ -58,10 +60,12 @@ class Displayer:
             self.out_file_handler.write(message)
 
     def __init__(self):
-        self.out_file = None
-        self.out_file_handler = None
-        self.out_screen = True
-        self.verbosity = 0
+        if not self.__initialized:
+            self.__initialized = True
+            self.out_file = None
+            self.out_file_handler = None
+            self.out_screen = True
+            self.verbosity = 0
 
 
 # ----------------------------------------------------------------------
