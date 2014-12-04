@@ -10,7 +10,8 @@ OMSTD
 :Code:          https://github.com/cr0hn/omstd
 :Issues:        https://github.com/cr0hn/omstd/issues
 :Twitter:       https://twitter.com/OMSTD_project
-:Documentation [ES]: http://omstd.readthedocs.org
+:Documentation HTML [ES]: http://omstd.readthedocs.org
+:Documentation ePub [ES]: https://readthedocs.org/projects/omstd/downloads/epub/latest/
 
 What's this project?
 --------------------
