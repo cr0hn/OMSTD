@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Project name: Open Methodology for Security Tool Developers
-Project URL: https://github.com/cr0hn/OMSTD
+Project name: OMSTD
+Project URL: https://github.com/cr0hn/the_open_shortener
 
 Copyright (c) 2014, cr0hn<-AT->cr0hn.com
 All rights reserved.
@@ -19,8 +19,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 """
 
-from framework.celery.celery import celery
+__author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
 
-@celery.task
-def omstd_bh_001():
-    print("hello world from OMSTD!")
+HELLO_VAR = "hello!"

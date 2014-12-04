@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Project name: Open Methodology for Security Tool Developers
-Project URL: https://github.com/cr0hn/OMSTD
+Project name: OMSTD
+Project URL: https://github.com/cr0hn/the_open_shortener
 
 Copyright (c) 2014, cr0hn<-AT->cr0hn.com
 All rights reserved.
@@ -19,28 +19,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 """
 
-
 __author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
 
-import argparse
+from random import *
 
-from api import Parameters, run_all
 
 # ----------------------------------------------------------------------
-if __name__ == '__main__':
+def lp_006_p1_fn():
 
-    parser = argparse.ArgumentParser(description='OMSTD Malware')
-    parser.add_argument("-p", "--sample-path", type=str, dest="sample_path", help="binary sample path", required=True)
-    parser.add_argument("-v", dest="verbosity", type=int, help="enable verbose mode", default=False)
-    parser.add_argument("-o", dest="output_file", type=str, help="output file name", default=None)
-    parser.add_argument("--rules-path", dest="rules_path", type=str, help="yara rules path (default .rules/)",
-                        default=None)
-
-    params = parser.parse_args()
-
-    input_parameters = Parameters(sample_path=params.sample_path,
-                                  output_file=params.output_file,
-                                  verbosity=params.verbosity,
-                                  rules_path=params.rules_path)
-
-    run_all(input_parameters)
+    print(HELLO_VAR)
