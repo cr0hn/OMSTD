@@ -19,23 +19,32 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 """
 
-# from distutils.core import setup, find_packages
-from setuptools import setup, find_packages
+__author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
 
-setup(
-    name='OMSTD',
-    version='0.0.1',
-    # packages=,
-    url='https://github.com/cr0hn/omstd',
-    license='BSD',
-    author='cr0hn',
-    author_email='cr0hn<-at->cr0hn.com',
-    description='Open Metodology for Security Tools Developers',
-    # entry_points={'console_scripts': [
-    #     '',
-    # ]},
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Operating System :: OS Independent",
-    ]
-)
+import argparse
+
+from api import Parameters, run_in_console
+
+# ----------------------------------------------------------------------
+def main():
+
+    parser = argparse.ArgumentParser(description='YOUR DESCRIPTION') # TODO
+    # parser.add_argument("positional", metavar='POSITIONAL', help="HELP", nargs="+")
+    parser.add_argument('-v', dest='verbosity', default=0, action="count", help="verbosity level: -v, -vv, -vvv.")
+    # parser.add_argument("--open", dest="opt_open", action="store_true", help="HELP", default=False)
+    # parser.add_argument("-p", dest="opt_p", help="HELP", default="")
+
+    params = parser.parse_args()
+
+    # Set config
+    try:
+        input_parameters = Parameters(verbosity=params.verbosity)
+    except ValueError as e:
+        print(e)
+        exit()
+
+    run_in_console(input_parameters)
+
+
+if __name__ == "__main__":
+    main()

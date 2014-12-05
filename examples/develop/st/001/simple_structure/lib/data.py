@@ -19,4 +19,37 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 """
 
-print("hello world")
+
+__author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
+
+
+# --------------------------------------------------------------------------
+class Parameters:
+    """Program parameters"""
+
+    # ----------------------------------------------------------------------
+    def __init__(self, **kwargs):
+        """
+        :param verbosity: verbosity level
+        :type verbosity: int
+
+        :raises: ValueError
+        """
+        self.verbosity = int(kwargs.get("verbosity", 0))
+
+
+# --------------------------------------------------------------------------
+class Results:
+    """Program results"""
+
+    # ----------------------------------------------------------------------
+    def __init__(self, **kwargs):
+        """
+        :param execution_time: Time got for scan in miliseconds
+        :type execution_time: float
+
+        """
+        self.execution_time = kwargs.get("execution_time", 0)
+
+
+__all__ = ["Results", "Parameters"]
