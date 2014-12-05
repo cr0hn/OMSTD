@@ -1,8 +1,8 @@
 TODO
 ====
 
-To fix add to guide
--------------------
+Fixes for guide
+---------------
 
 + Add :term: tag to generate glosary (`http://sphinx-doc.org/markup/inline.html#role-guilabel`_)
 + Add tag to differentiate pdf/epub/html and show appropriate images/videos, in BH-001, for example.
@@ -40,6 +40,3 @@ New cases to add
     + Create a plugins system
     + Plugin execution order
     + Plugin dependencies
-
-+ Dinamic import libraries: https://docs.python.org/3.4/library/functions.html#__import__
-+ Convertir de string a boolean
