@@ -28,8 +28,7 @@ import argparse
 def main():
     from .api import Parameters, run_console, PASSWORD_MD5_CRACKING_PROVIDERS
     parser = argparse.ArgumentParser(description='OMSTD Example')
-    parser.add_argument("-m", "--md5", dest="password", help="MD5 hashed value to test",
-                        required=True)
+    parser.add_argument("-m", "--md5", dest="password", help="MD5 hashed value to test (mandatory)", default=None)
     parser.add_argument("-v", dest="verbosity", help="verbosity level")
     parser.add_argument("-p", dest="provider", help="select provider used to get cracked MD5 hash. Defaul: all.",
                         default="all")
@@ -46,6 +45,11 @@ def main():
         for x in PASSWORD_MD5_CRACKING_PROVIDERS:
             print("  - %s" % x)
         print()
+        exit()
+
+    # Checks if md5 info is set
+    if params.password is None:
+        print("error: the following arguments are required: -m/--md5")
         exit()
 
     # Set config
