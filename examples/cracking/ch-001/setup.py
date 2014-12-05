@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
     name='OMSTD-ch-001',
-    version='0.1',
+    version='0.1.1',
     packages=['omstd_ch_001', 'omstd_ch_001.lib'],
     url='http://omstd.readthedocs.org/cracking/ch_001.html',
     license='BSD',
