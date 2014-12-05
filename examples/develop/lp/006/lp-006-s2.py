@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Project name: Open Methodology for Security Tool Developers
-Project URL: https://github.com/cr0hn/OMSTD
+Project name: OMSTD
+Project URL: https://github.com/cr0hn/the_open_shortener
 
 Copyright (c) 2014, cr0hn<-AT->cr0hn.com
 All rights reserved.
@@ -19,20 +19,25 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 """
 
-
-"""
-API file
-"""
-
 __author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
 
-from lib.data import Parameters, Results
-from framework.celery.celery import celery
-from framework.tasks.yara_task import yara_task
+# Detect if applitaion is calling out of the box or inside a package.
+if __name__ == "__main__" and __package__ is None:
+    import sys
+    import os
 
+    # Load path of main program file (this file) as a part of path of python interpreter
+    parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(1, parent_dir)
 
-# ----------------------------------------------------------------------
-def run_all(input_parameters):
+    # Load parent package as a common package
+    import lp_006_p1
 
-    # Display results
-    yara_task.delay(input_parameters)
+    # Set environment package to this package
+    __package__ = str("lp_006_p1")
+    del sys, os
+
+    # Continue normally
+    from .lp_006_p1.good import *
+
+    lp_006_p1_fn()

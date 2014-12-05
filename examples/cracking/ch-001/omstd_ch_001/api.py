@@ -26,13 +26,59 @@ API file
 
 __author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
 
-from lib.data import Parameters, Results
-from framework.celery.celery import celery
-from framework.tasks.yara_task import yara_task
+__all__ = ["check_md5", "run_check_md5_hash"]
+
+# Import data
+from .lib.data import *
+from .lib.check_md5 import check_md5
 
 
 # ----------------------------------------------------------------------
-def run_all(input_parameters):
+def run_check_md5_hash(input_parameters):
+    """
+    Checks MD5 hash and return an Results object.
 
-    # Display results
-    yara_task.delay(input_parameters)
+    :param input_parameters: Parameters object with config
+    :type input_parameters: Parameters
+
+    :return: Results object
+    :rtype: Results
+
+    :raises: TypeError
+    """
+    if not isinstance(input_parameters, Parameters):
+        raise TypeError("Expected Parameters, got '%s' instead" % type(input_parameters))
+
+    try:
+        r = check_md5(input_parameters)
+
+        return Results(plain_password=r,
+                       is_hash_found=True)
+    except HashNotFound as e:
+
+        return Results(plain_password=None,
+                       is_hash_found=False)
+
+
+# ----------------------------------------------------------------------
+def run_console(input_parameters):
+    """
+    Run for command line interface. It's make all steps of tool:
+    - Looking find
+    - Get password
+    - Display into screen
+
+    :param input_parameters: Parameters object with config
+    :type input_parameters: Parameters
+
+    :raises: TypeError
+    """
+    try:
+        result = run_check_md5_hash(input_parameters)
+
+        # Display plain text
+        print("[**] Plain text FOUND!!!. Decoded password is ----> %s <----." % result.plain_password)
+    except InvalidHashFormat as e:
+        print("\n[!] An error was found while try to get password: %s\n" % e)
+    except HashNotFound as e:
+        print("\n[-] Plain text not found for hash '%s'" % input_parameters.md5_hash)

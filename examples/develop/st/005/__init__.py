@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Project name: Open Methodology for Security Tool Developers
-Project URL: https://github.com/cr0hn/OMSTD
+Project name: OMSTD
+Project URL: https://github.com/cr0hn/the_open_shortener
 
 Copyright (c) 2014, cr0hn<-AT->cr0hn.com
 All rights reserved.
@@ -19,20 +19,4 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 """
 
-
-"""
-API file
-"""
-
 __author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
-
-from lib.data import Parameters, Results
-from framework.celery.celery import celery
-from framework.tasks.yara_task import yara_task
-
-
-# ----------------------------------------------------------------------
-def run_all(input_parameters):
-
-    # Display results
-    yara_task.delay(input_parameters)

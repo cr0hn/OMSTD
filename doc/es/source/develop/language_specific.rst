@@ -302,3 +302,184 @@ Aquí podemos ver el ejemplo anterior usando :samp:`with`:
     :linenos:
     :lines: 25-
     :emphasize-lines: 9,10
+
+----
+
+.. _lp-006:
+
+LP-006 - import relativos, absolutos, paquetes y demás hierbas
+--------------------------------------------------------------
+
+Problema
+********
+
+Cuando desarrollamos en Python es muy habitual toparnos rápidamentente con mensajes como:
+
+.. code-block:: bash
+
+    ...
+    ValueError: Attempted relative import in non-package
+
+.. code-block:: bash
+
+    ...
+    SystemError: Parent module '' not loaded, cannot perform relative import
+
+Estos errores son muy abituales en Python 3.x. Esto es debido a que se está tratando de hacer un :samp:`import` cómo si se tratara de un paquete. Pero... ¿Qué significa esto?
+
+
+.. note::
+
+    Python 3.4 introdujo cambios en comportamiento interno cuando importa módulos y dependencias.
+
+    Puede leer más sobre este tema consultando el `PEP-0366 <https://www.python.org/dev/peps/pep-0366/>`_.
+
+    Se recomienda la lectura del post de `taherh <http://stackoverflow.com/users/811556/taherh>`_ en StackOverFlow: http://stackoverflow.com/a/6655098 , sobre este tema.
+
+
+Un par de conceptos:
+
+Concepto: Paquete
++++++++++++++++++
+
+En Python es un proyecto que puede ser importado, para ser usado como librería.
+
+Éstos deberían tener :samp:`import` relativos, para asegurarse que la librería importada es del propio paquete, y no otra del sistema que tenga el mismo nombre.
+
+Podemos ver la importancia de las rutas relativas en el siguiente ejemplo:
+
+Supongamos que nuestra aplicación de ejemplo `lp-006-p1.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/006/lp-006-p1.py>`_
+
+.. literalinclude:: ../../../../examples/develop/lp/006/lp-006-p1.py
+    :linenos:
+    :lines: 24-
+
+El ejemplo tiene la estrutura:
+
+.. _lp-006-structure:
+
+.. code-block:: text
+    :linenos:
+    :emphasize-lines: 2
+
+    lp_006_p1
+        \__ random
+            \__ __init__.py
+        \__ __init__.py
+        \__ bad.py
+        \__ good.py
+    \__ lp-006-p1.py
+
+El paquete random tiene el mismo nombre que el incluido en Python, por lo que si escribimos el siguiente código:
+
+`lp-006-p1/bad.py <https://github.com/cr0hn/OMSTD/blob/master/examples/develop/lp/006/lp-006-p1/bad.py>`_
+
+.. literalinclude:: ../../../../examples/develop/lp/006/lp_006_p1/bad.py
+    :linenos:
+    :lines: 24-
+    :emphasize-lines: 1, 6
+
+Cuantro se trata de mostrar la variable :samp:`HELLO_VAR`, no será encontrada porque realmente estamos importando es el paquete global de Python, y éste no contiene dicha variable. Por tanto se nos mostrará el siguiente error:
+
+.. code-block:: bash
+
+    Traceback (most recent call last):
+      File "lp-006-p1.py", line 26, in <module>
+        lp_006_p1_fn()
+      File "examples/develop/lp/006/lp_006_p1/bad.py", line 30, in lp_006_p1_fn
+
+        print(HELLO_VAR)
+    NameError: name 'HELLO_VAR' is not defined
+
+
+Concepto: Aplicación
+++++++++++++++++++++
+
+Una definición informa de aplicación de Python es aquella que usa como programa independiente y que tiene como finalidad ser importado por una aplicación externa.
+
+El fichero que contiene el punto de entrada a la aplicación, o **main**, *no puede usar rutas relativas*.
+
+¿Por qué sucede esto?
+
+Porque el uso de :samp:`import` relativos solo está permitido para paquetes y *han de ser llamados* desde paquetes externos, *no pueden ser lanzados desde el propio paquete* (por defecto).
+
+Es decir, que si tenemos la :ref:`estructura de directorios usada más arriba <lp-006-structure>`, el siguiente código no funcionará:
+
+.. literalinclude:: ../../../../examples/develop/lp/006/lp-006-p1.py
+    :linenos:
+    :lines: 25-
+    :emphasize-lines: 1, 6
+
+Y nos devolverá el error:
+
+.. code-block:: bash
+
+    File "lp-006-p2.py", line 24, in <module>
+       from .lp_006_p1.good import *
+    SystemError: Parent module '' not loaded, cannot perform relative import
+
+A modo de resumen: **No funciona porque se está usando una aplicación como un paquete**.
+
+
+Solución
+********
+
+Por su puesto existen soluciones para ambos casos. A modo de conceptual son los siguientes:
+
+Paquetes
+++++++++
+
+Usar :samp:`import` relativos, en lugar de absolutos, cuando queramos importar paquetes locales y que éstos no se confundan con los globales u otros que podamos tener instalados.
+
+Aplicación
+++++++++++
+
+Hay ocasiones en los que querremos usar una aplicación como un paquete como, por ejemplo:
+
+Cuando queramos crear un paquete que, además, pueda ser usado como aplicación.
+
+La solución: **forzar la aplicación a que se comporte como un paquete**.
+
+Cómo
+****
+
+
+Paquetes
+++++++++
+
+La solución es la impotanción relativa o, lo que es lo mismo, **indicar a Python que use el paquete local en lugar del global del sistema**:
+
+.. literalinclude:: ../../../../examples/develop/lp/006/lp_006_p1/good.py
+    :linenos:
+    :lines: 25-
+    :emphasize-lines: 1, 6
+
+.. code-block:: bash
+
+    hello!
+
+Aplicación
+++++++++++
+
+Transformar una aplicación en un paquete no es nada intuitivo ni trivial. Tendremos que tener controlar:
+
++ Detectar si la aplicación es parte de un paquete o no.
++ Mover los :samp:`import` de la parte global al ámbido de la función que haga de punto de entrada. Es ha de ser así para que, cuando el intérprete de Python importe todo el código no ejecute ni cargue ninguna librería hasta que no hayamos transformado la aplicación en paquete.
+
+El siguiente código solucionará nuestro problema:
+
+.. literalinclude:: ../../../../examples/develop/lp/006/lp-006-s2.py
+    :linenos:
+    :lines: 24-
+    :emphasize-lines: 2,7-8,11,14,18,20
+
+Explicación line a linea:
+
++ **1**: Detectamos si el fichero es el punto de entrada a la aplicación (:samp:`main`) y si es un paquete.
++ **7-8**: Cargamos el directorio desde el que es llamado el programa en la lista de paquetes disponibles de Python.
++ **11**: Una vez añadido en el entorno de Python el directorio donde se encuentra nuestro fichero, cargamos el paquete padre, el que contiene el ejecutable, o .py.
++ **14**: Establecemos la variable de entorno :samp:`__package__`, indicándole a Python que si que existe un paquete.
++ **18**: Cargamos nuestra librerías con :samp:`import` relativos. Ahora ya no tendremos problemas.
++ **20**: Continuamos la ejecución de nuestro código, como lo haríamos normalmente.
+
+

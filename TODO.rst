@@ -40,3 +40,6 @@ New cases to add
     + Create a plugins system
     + Plugin execution order
     + Plugin dependencies
+
++ Dinamic import libraries: https://docs.python.org/3.4/library/functions.html#__import__
++ Convertir de string a boolean

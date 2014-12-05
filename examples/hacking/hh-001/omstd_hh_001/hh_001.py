@@ -19,20 +19,49 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 """
 
-
-"""
-API file
-"""
-
 __author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
 
-from lib.data import Parameters, Results
-from framework.celery.celery import celery
-from framework.tasks.yara_task import yara_task
+import argparse
 
 
 # ----------------------------------------------------------------------
-def run_all(input_parameters):
+def main():
+    from .api import Parameters, run_in_console
 
-    # Display results
-    yara_task.delay(input_parameters)
+    parser = argparse.ArgumentParser(description='OMSTD Example')
+    parser.add_argument("targets", metavar='TARGETS', help="targets to scan", nargs="+")
+    parser.add_argument('-v', dest='verbosity', default=0, action="count", help="verbosity level: -v, -vv, -vvv.")
+    parser.add_argument("--open", dest="only_open", action="store_true", help="only display open ports", default=False)
+    parser.add_argument("-p", dest="ports_range", help="port range to scan in format 'X-Y'. Defaul: 1-1024.",
+                        default="1-1024")
+    parser.add_argument("-r", dest="rand_scan", action="store_false", help="don't randomize ports",
+                        default=True)
+    parser.add_argument("--proxy", dest="proxy", help="proxy in format: http://USER:PASS@IP:PORT")
+
+    params = parser.parse_args()
+
+    # Set config
+    try:
+        input_parameters = Parameters(ports_range=params.ports_range,
+                                      targets=params.targets,
+                                      verbosity=params.verbosity,
+                                      random_port_scan=params.rand_scan,
+                                      only_open=params.only_open,
+                                      proxy=params.proxy)
+    except ValueError as e:
+        print(e)
+        exit()
+
+    run_in_console(input_parameters)
+
+
+if __name__ == "__main__" and __package__ is None:
+    import sys
+    import os
+    parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(1, parent_dir)
+    import omstd_hh_001
+    __package__ = str("omstd_hh_001")
+    del sys, os
+
+    main()

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Project name: Open Methodology for Security Tool Developers
-Project URL: https://github.com/cr0hn/OMSTD
+Project name: OMSTD
+Project URL: https://github.com/cr0hn/the_open_shortener
 
 Copyright (c) 2014, cr0hn<-AT->cr0hn.com
 All rights reserved.
@@ -19,8 +19,33 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 """
 
-from framework.celery.celery import celery
+__author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
 
-@celery.task
-def omstd_bh_001():
-    print("hello world from OMSTD!")
+import argparse
+
+
+if __name__ == "__main__":
+
+    footed_description = """
+
+    Usage examples:
+        + Basic scan:
+            %(name)s 127.0.0.1
+        + Specifing port to test:
+            %(name)s -p 443 127.0.0.1
+        + Only diplay open ports
+            %(name)s -p 139 127.0.0.1
+
+    """"" % dict(name="st-005-s1.py")
+
+    parser = argparse.ArgumentParser(description='OMSTD Example', epilog=footed_description,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("targets", metavar='TARGETS', help="targets to scan", nargs="+")
+    parser.add_argument('-v', dest='verbosity', default=0, action="count",
+                        help="verbosity level: -v, -vv, -vvv.")
+    parser.add_argument("--open", dest="only_open", action="store_true",
+                        help="only display open ports", default=False)
+    parser.add_argument("-p", "--ports", dest="port", type=int,
+                        help="port to scan. Defaul: 80.", default=80)
+
+    params = parser.parse_args()

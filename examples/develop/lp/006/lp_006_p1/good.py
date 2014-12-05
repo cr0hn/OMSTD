@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Project name: Open Methodology for Security Tool Developers
-Project URL: https://github.com/cr0hn/OMSTD
+Project name: OMSTD
+Project URL: https://github.com/cr0hn/the_open_shortener
 
 Copyright (c) 2014, cr0hn<-AT->cr0hn.com
 All rights reserved.
@@ -21,20 +21,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 __author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
 
-from utils import find_tasks_in_project
 
-# Celery taskes package
-CELERY_MAIN_FOLDER = "framework"
+from .random import *
 
-# --------------------------------------------------------------------------
-# Celery common properties
-# --------------------------------------------------------------------------
-CELERY_TASK_RESULT_EXPIRES = 3600
-CELERY_IMPORTS = find_tasks_in_project("framework")
-BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+# ----------------------------------------------------------------------
+def lp_006_p1_fn():
 
-# --------------------------------------------------------------------------
-# Celery scheduled tasks
-# --------------------------------------------------------------------------
-CELERY_TIMEZONE = 'UTC'
-CELERYBEAT_SCHEDULE = {}
+    print(HELLO_VAR)

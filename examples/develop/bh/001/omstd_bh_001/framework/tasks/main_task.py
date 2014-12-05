@@ -19,20 +19,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 """
 
+from ...framework.celery.celery import celery
 
-"""
-API file
-"""
-
-__author__ = 'cr0hn - cr0hn<-at->cr0hn.com (@ggdaniel)'
-
-from lib.data import Parameters, Results
-from framework.celery.celery import celery
-from framework.tasks.yara_task import yara_task
-
-
-# ----------------------------------------------------------------------
-def run_all(input_parameters):
-
-    # Display results
-    yara_task.delay(input_parameters)
+@celery.task
+def omstd_bh_001_task():
+    print("hello world from OMSTD!")
