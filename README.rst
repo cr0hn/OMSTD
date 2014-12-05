@@ -22,6 +22,11 @@ Although it can be used to create any kind of tools and in any language, is prim
 
 It would be advisable for the reader to read carefully *Getting started* section, from the documentation, it will help you to understand this guide.
 
+What's new?
+-----------
+
+You can read new release information at: https://github.com/cr0hn/OMSTD/blob/master/CHANGELOG.rst
+
 Languages
 ---------
 
@@ -32,8 +37,4 @@ Currently OMSTD is written in **Spanish** only.
 Collaborate
 -----------
 
-Collaboration are welcome! You can collaborate:
-
-+ Mailing me :cr0hn<<--AT-->>.cr0hn.com.
-+ Using github issues.
-+ Forking project and send me patches.
+You can read a long explaination about how to collaborate in: http://omstd.readthedocs.org/contribute.html
