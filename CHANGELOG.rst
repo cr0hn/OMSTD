@@ -7,9 +7,6 @@ OMSTD v0.0.2
 + Added new study case, `ST-005 <http://omstd.readthedocs.org/develop/organization.html#st-005>`_: How to create command line parser.
 + Added new study case, `LP-006 <http://omstd.readthedocs.org/develop/language_specific.html#lp-006>`_: relative, absolute imports and packages.
 
-+ Added new study case, `RD-001`: How to create a setup.py file and upload your package to pypi.
-+ Added new study case, `RD-002`: How to automatize deploy throught SSH to remote server.
-
 
 OMSTD v0.0.1
 ============

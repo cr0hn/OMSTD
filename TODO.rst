@@ -42,11 +42,4 @@ New cases to add
     + Plugin dependencies
 
 + Dinamic import libraries: https://docs.python.org/3.4/library/functions.html#__import__
-+ Convertir de string a booleano
-
-
-
-
-
-Twitter
-Procedimientos para colaborar y traducir
++ Convertir de string a boolean
