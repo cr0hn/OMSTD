@@ -1,4 +1,15 @@
+import os
+
 from setuptools import setup, find_packages
+
+_required = []
+
+try:
+    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "requirements.txt")) as f:
+        _required = f.read().splitlines()
+    _required = list(filter(None, _required))  # Remove empty values
+except IOError:
+    print("requirements.txt file not found")
 
 setup(
     name='PROGRAM_NAME',  # TODO
@@ -6,6 +17,7 @@ setup(
     packages=find_packages(),
     url='https://YOUR_SITE',  # TODO
     license='BSD',
+    install_required=_required,
     entry_points={
         'console_scripts': [
             # 'your-binary-name = your_package.main:main',  # TODO
