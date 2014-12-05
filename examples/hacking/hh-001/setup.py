@@ -1,9 +1,9 @@
 from distutils.core import setup
 setup(
     name='OMSTD-hh-001',
-    version='0.1.1',
+    version='0.1.2',
     packages=['omstd_hh_001', 'omstd_hh_001.lib'],
-    url='http://omstd.readthedocs.org/hacking/hh_001.html',
+    url='https://github.com/cr0hn/OMSTD/tree/master/examples/hacking/hh-001',
     license='BSD',
     entry_points={
         'console_scripts': [
