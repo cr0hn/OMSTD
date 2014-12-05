@@ -3,7 +3,7 @@ setup(
     name='OMSTD-ch-001',
     version='0.1.1',
     packages=['omstd_ch_001', 'omstd_ch_001.lib'],
-    url='http://omstd.readthedocs.org/cracking/ch_001.html',
+    url='https://github.com/cr0hn/OMSTD/tree/master/examples/cracking/ch-001',
     license='BSD',
     entry_points={
         'console_scripts': [
