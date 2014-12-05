@@ -122,6 +122,7 @@ Donde:
    :maxdepth: 2
 
    start
+   contribute
    develop/index
    hacking/index
    cracking/index
